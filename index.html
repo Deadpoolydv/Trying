@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="other.html">Other</a>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to the home page of our website.</p>
+        <p>This is where you can introduce your website and its purpose.</p>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" style="display: none;">
+        <h2>About Us</h2>
+        <p>This is the about page of our website.</p>
+        <p>Here you can provide information about your company, team, or yourself.</p>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" style="display: none;">
+        <h2>Contact Us</h2>
+        <p>This is the contact page of our website.</p>
+        <p>You can provide contact information or a contact form here.</p>
+    </section>
+
+    <!-- Other Page -->
+    <section id="other" style="display: none;">
+        <h2>Other Page</h2>
+        <p>This is another page of our website.</p>
+        <p>You can use this page for any additional content or purposes.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle page navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('href').substring(1);
+                showPage(sectionId);
+            });
+        });
+
+        function showPage(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
